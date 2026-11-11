@@ -1,0 +1,116 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 check
+> npm run check:source && npm run typecheck && npm test && npm run test:app && npm run build
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 check:source
+> node scripts/prebuild.mjs
+
+PAID HUSTLE source structure looks complete.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 test
+> node --experimental-strip-types --test tests/*.test.mjs
+
+✔ sales funnel forecasts separate currencies and use clear stage probabilities (1.281259ms)
+✔ finance totals and overdue use original currency without double counting invoices (0.698051ms)
+✔ template creates one task per new step, preserving existing milestones (17.547425ms)
+✔ outreach cadence generates four deterministic future dates (1.165014ms)
+✔ client health score exposes concrete reasons (0.47172ms)
+✔ single-use proposal approval displays scope and records typed acknowledgement (12.746284ms)
+✔ every automation has unique identifier (0.9432ms)
+✔ due lead and project generate tasks once (0.832253ms)
+✔ disabled rules do not generate actions (0.142585ms)
+✔ monthly retainer tasks are generated once per month (0.268224ms)
+✔ completed project generates one handover record (0.199901ms)
+✔ invalid date rejected (0.759944ms)
+✔ audit counts and validates client-project relationships (1.100227ms)
+✔ audit blocks duplicate IDs (0.17938ms)
+✔ audit blocks projects referencing missing clients (0.149645ms)
+✔ audit blocks tasks linking another client project (0.144057ms)
+✔ migration applies twice; RLS isolates owners; stale edits roll back; Stripe receipt is atomic and protected (2058.503901ms)
+✔ public response transaction rolls back on changed scope, then accepts once and updates onboarding (802.981687ms)
+✔ complete setup reruns without changing existing records or private files; Storage policies isolate owner paths (768.342894ms)
+✔ secure public intake link uses token hash and accepts one response only (22.393481ms)
+✔ no patch for unchanged workspace (1.121278ms)
+✔ inserts just one client without replacing unrelated records (0.685953ms)
+✔ updates just one task and deletes another (0.295565ms)
+✔ ignores array order but detects preference edits (0.239992ms)
+✔ never deletes records from absent legacy arrays (0.248054ms)
+✔ active totals exclude inactive, completed, cancelled and archived work; retainer projects count once (22.684951ms)
+✔ monthly dates clamp month ends and leap years; browser and scheduled planners agree and do not duplicate manual runs (1.445246ms)
+✔ invoice reminders are absent even when legacy overdue rule is enabled (0.201102ms)
+✔ daily messages rotate for ninety days without repeating and are stable within a calendar date (0.426001ms)
+✔ conversion and accepted proposal reconciliation are idempotent and preserve existing client and finance records (1.036641ms)
+✔ template entry points share deterministic task IDs and checklist completion updates both ways (0.415135ms)
+✔ merge protects remote deletions, preserves independent additions and requires decisions for delete/edit collisions (0.935428ms)
+✔ open form merges unrelated remote changes and blocks same-field overwrites (0.512382ms)
+✔ JSONB key reordering does not create false nested-array conflicts (0.665813ms)
+✔ server planner generates internal automation actions and no duplicates (1.167468ms)
+✔ server planner respects disabled rules and does not invent payment receipts (0.303747ms)
+✔ Stripe uses VAT-inclusive Checkout cents and reconciles webhook to gross paid transaction (8.073637ms)
+✔ linked native Stripe invoice payments use verified events; unmatched and unpaid invoices do not create revenue (1.689925ms)
+✔ stripe verifies signature of raw payload (1.273338ms)
+✔ stripe rejects missing or malformed signature (0.256537ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3771.513909
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 test:app
+> vitest run
+
+
+ RUN  v5.1.0 <project>
+
+
+ Test Files  3 passed (3)
+      Tests  8 passed (8)
+   Start at  20:59:22
+   Duration  3.37s (tests 46%, environment 31%, transform 9%, import 7%, setup 6%)
+
+    Isolate  3 workers spawned · ~403ms startup each (spawn + environment, per file)
+             at least ~806ms faster with isolate: false — reuses workers across files instead of one per file
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> paid-hustle-os@3.5.0 prebuild
+> node scripts/prebuild.mjs
+
+PAID HUSTLE source structure looks complete.
+
+> paid-hustle-os@3.5.0 build
+> vite build
+
+vite v6.4.6 building for production...
+transforming...
+✓ 2065 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                 0.96 kB │ gzip:   0.48 kB
+dist/assets/paid-hustlee-logo-Chm3GCz4.png      8.91 kB
+dist/assets/index-B8HgL3BY.css                 72.40 kB │ gzip:  16.07 kB
+dist/assets/index-BF5hdXzb.js               1,085.25 kB │ gzip: 303.56 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.21s
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
