@@ -1,4 +1,4 @@
-import paidHustleLogo from './assets/paid-hustlee-logo.png'
+import strategyScaleIcon from './assets/strategy-scale-icon.png'
 import ProjectHub, { ClientHub } from './ProjectHub'
 import ProjectEditor from './ProjectEditor'
 import FocusPage from './FocusPage'
@@ -149,9 +149,9 @@ function Login() {
     setLoading(false)
   }
   return <div className="login-screen"><div className="login-glow"/><div className="login-card">
-    <div className="login-logo"><img src={paidHustleLogo} alt="PAID HUSTLE logo" /></div>
+    <div className="login-logo"><img src={strategyScaleIcon} alt="Strategy Scale Dashboard icon" /></div>
     <Badge tone="teal"><LockKeyhole size={12}/> PRIVATE WORKSPACE</Badge>
-    <h1>Welcome back.</h1><p>Your business, beautifully organized. Sign in to your PAID HUSTLE workspace.</p>
+    <h1>Welcome back.</h1><p>Your business, beautifully organized. Sign in to your Strategy Scale Dashboard workspace.</p>
     <form onSubmit={login} className="login-form"><label>Email address<input autoComplete="email" type="email" placeholder="you@agency.com" value={email} required onChange={e => setEmail(e.target.value)} /></label>
     <label>Password<input type="password" autoComplete="current-password" placeholder="Your password" value={password} required onChange={e => setPassword(e.target.value)}/></label>
     {error && <div className="inline-error"><AlertCircle size={15}/>{error}</div>}
@@ -567,14 +567,14 @@ export default function App() {
   const clearWorkspace = () => { if (window.confirm('Delete ALL workspace records? This cannot be undone. Export a backup first.') && window.confirm('Are you absolutely sure you want an empty workspace?')) { setData(emptyWorkspace()); setToast('Workspace cleared') } }
 
   if (invalidUrl) return <div className="loading-page"><div className="inline-error">Supabase URL configuration is invalid. Check VITE_SUPABASE_URL in Netlify and redeploy. Your data has not been deleted.</div></div>
-  if (authLoading) return <div className="loading-page"><div className="loading-orb"><img src={paidHustleLogo} alt=""/></div><p>Opening your workspace…</p></div>
+  if (authLoading) return <div className="loading-page"><div className="loading-orb"><img src={strategyScaleIcon} alt=""/></div><p>Opening your workspace…</p></div>
   if (cloudEnabled && !session) return <Login />
-  if (!loaded) return <div className="loading-page"><div className="loading-orb"><img src={paidHustleLogo} alt=""/></div><p>Loading private data…</p>{sync === 'error' && <div className="inline-error"><AlertCircle size={16}/>{syncError || 'Your workspace could not be loaded safely.'}</div>}{sync === 'error' && <button className="btn btn-subtle" onClick={retrySync}><RefreshCcw size={16}/>Retry loading</button>}</div>
+  if (!loaded) return <div className="loading-page"><div className="loading-orb"><img src={strategyScaleIcon} alt=""/></div><p>Loading private data…</p>{sync === 'error' && <div className="inline-error"><AlertCircle size={16}/>{syncError || 'Your workspace could not be loaded safely.'}</div>}{sync === 'error' && <button className="btn btn-subtle" onClick={retrySync}><RefreshCcw size={16}/>Retry loading</button>}</div>
 
   return <div className="app-shell">
     {mobileOpen && <div className="mobile-shade" onClick={() => setMobileOpen(false)}/>}
     <aside className={`sidebar ${mobileOpen ? 'sidebar-open' : ''}`}>
-      <div className="brand"><div className="brand-mark"><img src={paidHustleLogo} alt="PAID HUSTLE logo" /></div><div className="brand-title"><strong>PAID HUSTLE</strong><span>AGENCY OPERATING SYSTEM</span></div><IconButton title="Close navigation" onClick={()=>setMobileOpen(false)} className="sidebar-close"><X size={18}/></IconButton></div>
+      <div className="brand" aria-label="Strategy Scale Dashboard"><div className="brand-mark"><img src={strategyScaleIcon} alt="Strategy Scale Dashboard icon" /></div><div className="brand-title"><strong>STRATEGY SCALE</strong><span>DASHBOARD</span></div><IconButton title="Close navigation" onClick={()=>setMobileOpen(false)} className="sidebar-close"><X size={18}/></IconButton></div>
       <div className="sidebar-caption">WORKSPACE</div>
       <nav className="sidebar-nav">{navOrder.filter(name => name === 'overview' || !hiddenPages.includes(name)).map(name => { const Icon = icons[name]; return <button key={name} className={`nav-link ${page===name ? 'nav-active':''}`} onClick={()=>navigate(name)}><Icon size={18}/><span>{pageNames[name]}</span>{name==='tasks' && outstanding>0 && <em>{outstanding}</em>}</button> })}</nav>
       <div className="sidebar-caption sidebar-caption-second">SYSTEM</div><nav className="sidebar-nav"><button className={`nav-link ${page==='settings' ? 'nav-active':''}`} onClick={()=>navigate('settings')}><Settings2 size={18}/><span>Settings</span></button></nav>
@@ -675,7 +675,7 @@ export default function App() {
       </>}
       {hub?.type==='project'&&getProject(hub.id)&&<ProjectHub key={hub.id} project={getProject(hub.id)!} client={getClient(getProject(hub.id)!.clientId)} tasks={data.tasks} transactions={data.transactions} formatAmount={money} toBase={(value,source='DKK')=>converted(value,source,'DKK')} onBack={()=>setHub(null)} onOpenClient={()=>openClient(getProject(hub.id)!.clientId)} onEditProject={()=>editProject(hub.id)} onUpdate={(patch,msg)=>updateProject(hub.id,patch,msg)} onAddTask={()=>add('task',getProject(hub.id)!.clientId,hub.id)} onEditTask={id=>edit('task',id)} onToggleTask={toggleTask} onAddTransaction={()=>add('transaction',getProject(hub.id)!.clientId,hub.id)} onEditTransaction={id=>edit('transaction',id)} onArchive={()=>archiveProject(hub.id)} stageOptions={projectPipeline} agreements={<ProjectAgreements projectId={hub.id} data={data} setData={setData} db={db} session={session}/>}/>}
       {hub?.type==='client'&&getClient(hub.id)&&<ClientHub key={hub.id} client={getClient(hub.id)!} projects={projects} tasks={data.tasks} transactions={data.transactions} fmt={money} onBack={()=>setHub(null)} onEdit={()=>edit('client',hub.id)} onNewProject={()=>addProject(hub.id)} onOpenProject={openProject} onArchive={()=>archiveClient(hub.id)}/>}
-      <footer className="main-footer"><span>© {new Date().getFullYear()} PAID HUSTLE <i/> Made for building better businesses.</span><span>PRIVATE AGENCY OS <span className="footer-star">✳</span> V3.5</span></footer>
+      <footer className="main-footer"><span>© {new Date().getFullYear()} Strategy Scale Dashboard <i/> Made for building better businesses.</span><span>PRIVATE DASHBOARD <span className="footer-star">✳</span> V3.5</span></footer>
     </main></div>
     {dialog && editingItem && <Editor kind={dialog.kind} item={editingItem} clients={data.clients} projects={projects} isNew={!dialog.id} onClose={()=>setDialog(null)} onSave={save} onDelete={remove} onConvertLead={convertLead} onPrepareProposal={leadProposal} leadStageOptions={salesPipeline}/>}
     {projectDialog&&editingProject&&<ProjectEditor key={projectDialog.id||'new-project'} project={editingProject} clients={data.clients} isNew={!projectDialog.id} onClose={()=>setProjectDialog(null)} onSave={saveProject} onDelete={deleteProject} stageOptions={projectPipeline}/>}

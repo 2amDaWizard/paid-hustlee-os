@@ -155,3 +155,9 @@
 @media(min-width:1700px){.page-projects .kanban-board{grid-auto-columns:minmax(310px,1fr)}}
 @media(max-width:900px){.page-projects .kanban-board{grid-auto-columns:275px}}
 @media(max-width:600px){.modal-footer{flex-wrap:wrap}.modal-footer .flex-grow{display:none}.modal-footer .btn{flex:1 1 auto}.ops-record-actions{flex-wrap:wrap}.agreement-actions .btn{min-height:38px}.page-projects .kanban-content{min-height:350px}}
+
+/* Strategy Scale Dashboard branding: fit the full name cleanly in the existing sidebar. */
+.brand-title{min-width:0;gap:5px}
+.brand-title strong{font-size:12px;letter-spacing:.55px;line-height:1.2}
+.brand-title span{font-size:9px;letter-spacing:1.45px;line-height:1.1}
+.brand-mark{flex-shrink:0}
