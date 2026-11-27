@@ -1,4 +1,4 @@
-const CACHE='strategy-scale-static-v3.5-brand1';
+const CACHE='strategy-scale-static-v4-clean';
 self.addEventListener('install',event=>{self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',event=>{
